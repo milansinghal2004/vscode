@@ -1,0 +1,30 @@
+*{
+    background-image: url(pic.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.heading{
+    color: rgb(12, 213, 196);
+    font-size: xx-large;
+    text-align: center;
+}
+
+.para{
+    color: aliceblue;
+    text-align: center;
+    font-size: x-large;
+    margin-left: 165px;
+    margin-right: 165px;
+    margin-top: 82px;
+}
+
+.img{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.ytvid{
+    align-items: center;
+}
