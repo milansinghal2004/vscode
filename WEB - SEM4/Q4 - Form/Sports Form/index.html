@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprts Form</title>
+</head>
+<style>
+    *{
+        background-image: url(sports.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            width: 300px;
+            height: auto;
+            margin: 100px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            justify-content: center;
+            align-items: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            color: #000000;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form{
+            margin-top: 200px;
+            color: rgb(0, 0, 0);
+        }
+</style>
+<body>
+    <form>
+        <label for="Name">Name: </label>
+        <input type="text" id="Name" name="Name" required>
+        
+        <label for="Password">Password: </label>
+        <input type="password" id="Password" name="Password" required>
+
+        <label for="Age">Age: </label>
+        <input type="number" id="Age" name="Age" required>
+        
+        <label for="Gender">Gender: </label>
+        <select name="Gender" id="Gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="PNTS">Prefer Not To Say</option>
+        </select>
+        
+        <label for="Sports">Sports: </label>
+        <select name="Sports" id="Sports">
+            <option value="Cricket">Cricket</option>
+            <option value="Football">Football</option>
+            <option value="TT">TT</option>
+            <option value="Batminton">Batminton</option>
+            <option value="Swimming">Swimming</option>
+        </select>
+
+        <button type="button">Submit</button>
+    </form>
+</body>
+</html>

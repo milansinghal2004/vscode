@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Source+Sans+Pro:ital,wght@1,400;1,600&family=Xanh+Mono:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 20;
+}
+
+nav{
+    background-color: black;
+    color: rgb(190, 158, 236);
+    height: 75px;
+    font-size: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-family: 'Alkatra', cursive;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+.gameContainer{
+    background-color: beige;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: repeat-y;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    font-family: 'Alkatra', cursive;
+    position: relative;
+}
+
+.box{
+    border: 2.5px solid black;
+    font-size: 6vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box:hover{
+    background-color: rgb(217, 226, 184);
+}
+
+.gameinfo{
+    padding: 34px;
+}
+
+.gameInfo h1{
+    font-size: 3rem;
+    font-family: 'Alkatra', cursive;
+    padding: 15%;
+}
+
+.imgbox img{
+    width: 0;
+    transition: 1s ease-in-out;
+}
+
+.br-0{
+    border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 1px 18px;
+    background: #f5e9fb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Alkatra', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.line{
+    background-color: black;
+    height: 4px;
+    width: 0;
+    position: absolute;
+    background-color: #d1f909;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+
+.info{
+    padding: 25%;
+    margin-bottom: 40%;
+    font-family: 'Alkatra', cursive;
+    font-size: xx-large;
+    
+}

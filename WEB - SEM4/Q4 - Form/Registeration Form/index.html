@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Page</title>
+</head>
+<style>
+    *{
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            width: 300px;
+            height: auto;
+            margin: 100px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            justify-content: center;
+            align-items: center;
+
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.13);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7.9px);
+            border: 1px solid rgba(255, 255, 255, 0.79);
+        }
+        /* label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        } */
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form{
+            margin-top: 200px;
+        }
+</style>
+<body>
+    <form>
+        <label for="Name">Name: </label>
+        <input type="text" id="Name" name="Name" required>
+        
+        <label for="Age">Age: </label>
+        <input type="number" id="Age" name="Age" required>
+        
+        <label for="Date of Birth">DOB: </label>
+        <input type="date" id="DOB" name="DOB" required>
+        
+        <label for="Course">Course: </label>
+        <select name="Course" id="Course">
+            <option value="SOE">SOE</option>
+            <option value="SOD">SOD</option>
+            <option value="SOCS">SOCS</option>
+            <option value="SOAE">SOAE</option>
+            <option value="SOHS">SOHS</option>
+        </select>
+
+        <button type="button">Login</button>
+    </form>
+</body>
+</html>

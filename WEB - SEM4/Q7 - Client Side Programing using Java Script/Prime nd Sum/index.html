@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Numbers and Sum</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #AAC7D8;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    input {
+      background: none;
+      border: 2px solid #293532;
+      border-radius: 20px;
+      box-sizing: border-box;
+      font-size: larger;
+      text-align: center;
+      height: 50px;
+      margin-top: 10px;
+    }
+
+    button {
+      font-family: 'Protest Riot', sans-serif;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      appearance: none;
+      background-color: #293532;
+      border: 0;
+      border-radius: 36px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #293532;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Prime Numbers and Sum</h1>
+  <label for="startInterval" style="font-size: 20px;">Enter start of interval:</label>
+  <input type="number" id="startInterval" required>
+  <br>
+  <label for="endInterval" style="font-size: 20px;">Enter end of interval:</label>
+  <input type="number" id="endInterval" required>
+  <br>
+  <button onclick="printPrimesAndSum()">Generate</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  function isPrime(num) {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function printPrimesAndSum() {
+    const startInterval = parseInt(document.getElementById('startInterval').value);
+    const endInterval = parseInt(document.getElementById('endInterval').value);
+
+    let primeNumbers = [];
+    let sum = 0;
+
+    for (let i = startInterval; i <= endInterval; i++) {
+      if (isPrime(i)) {
+        primeNumbers.push(i);
+        sum += i;
+      }
+    }
+
+    const resultText = primeNumbers.length > 0 ?
+      `Prime Numbers: ${primeNumbers.join(', ')}
+      <br>
+      Sum of Prime Numbers: ${sum}` :
+      'No prime numbers in the given interval.';
+
+    document.getElementById('result').innerHTML = resultText;
+  }
+</script>
+
+</body>
+</html>

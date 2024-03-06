@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>                                                     
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+        
+        * {
+            font-family: 'Protest Riot', sans-serif;
+        }    
+
+        body {
+            background-color: #6C63FF;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .todo-app {
+            max-width: 600px;
+            background-color: hsl(0, 0%, 100%);
+            padding: 20px 30px 50px;
+            margin: 120px auto 15px;
+            border-radius: 15px;
+            transition: box-shadow 0.3s;
+        }
+
+        .todo-app:hover {
+            box-shadow: 0 0 20px #c1e8ff; /* Outer glow effect on hover */
+        }
+
+        .todo-app h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 20px;
+            border: 4px solid #632fff;
+            border-radius: 40px;
+            font-size: 1rem;
+            margin-left: 20px;
+        }
+
+        .btn {
+            background-color: #632fff;
+            border: none;
+            color: white;
+            padding: 20px 30px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-size: 1.5rem;
+        }
+
+        .btn:hover {
+            background-color: #4a15e9;
+        }
+
+        ul li {
+            list-style-type: none;
+            font-size: 1.1rem;
+            padding: 10px 6px 10px 30px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        ul li::before {
+            content: ""; /* Removed checkbox content */
+            font-size: 25px;
+            position: absolute;
+            left: -1px;
+            top: 4px;
+        }
+
+        #task-list {
+            padding: 0px 30px;
+        }
+
+        ul li.checked {
+            text-decoration: line-through;
+            color: #632fff;
+        }
+
+        ul li.checked::before {
+            content: ""; /* Removed checkbox content */
+            color: #632fff;
+        }
+
+        ul li span {
+            position: absolute;
+            top: 1.8px;
+            right: 5px;
+            color: rgb(227, 120, 26);
+            font-size: 1rem;
+        }
+
+        .delete-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            padding: 7px;
+            color: #632fff;
+        }
+
+        .delete-btn:hover {
+            color: #ff4d4d;
+        }
+
+        .edit-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            padding: 7px;
+            color: #632fff;
+
+        }
+
+        .edit-btn:hover {
+            color: yellow;
+        }
+        
+        #export-to-excel-btn,
+        #view-list-btn,
+        #meeting-btn,
+        #chat-btn,
+        .btn {
+            font-family: 'Protest Riot', sans-serif;
+            margin-left: 5%;
+            margin-top: 2%;
+            display: inline-flex;
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s, background-color 0.3s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .btn {
+            background-color: #632fff;
+            border: none;
+            color: white;
+            padding: 20px 30px;
+            cursor: pointer;
+            border-radius: 40px; /* Circular border radius */
+            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s, background-color 0.3s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+        }
+
+        .btn:active,
+        #view-list-btn:active, #export-to-excel-btn:active,
+        #meeting-btn:active, #chat-btn:active {
+            background-color: #3c4fe0;
+            box-shadow: #3c4fe0 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        #task-list {
+            display: none;
+        }
+
+        #view-list-btn.active, #export-to-excel-btn.active,
+        #meeting-btn.active, #chat-btn.active {
+            background-color: #3c4fe0;
+            box-shadow: #3c4fe0 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        #view-list-btn:focus, #export-to-excel-btn:focus,
+        #meeting-btn:focus, #chat-btn:focus {
+            box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        }
+
+        #view-list-btn:hover, #export-to-excel-btn:hover,
+        #meeting-btn:hover, #chat-btn:hover {
+            box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    
+    <div class="todo-app">
+        <h1>To-Do List</h1>
+        <form action="" id="task-form">
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Enter a New Task"
+            />
+            <button class="btn" type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </form>
+        <button id="view-list-btn" class="btn">View List</button>
+        <button id="export-to-excel-btn" class="btn">Export to Excel</button>
+        <button id="meeting-btn" class="btn">Meeting</button>
+        <button id="chat-btn" class="btn">Chat</button>
+        <ul id="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <!-- Include xlsx.full.min.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskForm = document.getElementById('task-form');
+            const taskInput = document.getElementById('task-input');
+            const taskList = document.getElementById('task-list');
+            const viewListBtn = document.getElementById('view-list-btn');
+            const meetingBtn = document.getElementById('meeting-btn');
+            const chatBtn = document.getElementById('chat-btn');
+
+            // Load tasks from local storage when the page is loaded
+            loadTasks();
+
+            taskForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const taskText = taskInput.value.trim();
+                if (taskText !== '') {
+                    addTask(taskText);
+                    saveTasks(); // Save tasks to local storage
+                    taskInput.value = '';
+                }
+            });
+
+            viewListBtn.addEventListener('click', function() {
+                const isActive = viewListBtn.classList.toggle('active');
+                if (isActive) {
+                    taskList.style.display = 'block';
+                    addDateToTasks(); // Add date to tasks when the list is viewed
+                } else {
+                    taskList.style.display = 'none';
+                }
+
+                // Toggle text
+                viewListBtn.textContent = isActive ? 'Hide List' : 'View List';
+            });
+
+            meetingBtn.addEventListener('click', function() {
+                redirectToMeeting();
+            });
+
+            chatBtn.addEventListener('click', function() {
+                redirectToChat();
+            });
+
+            function addTask(taskText) {
+                const li = document.createElement('li');
+
+                // Create checkbox input
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+
+                // Create label for the checkbox
+                const label = document.createElement('label');
+                label.textContent = taskText;
+
+                // Append checkbox and label to task item
+                li.appendChild(checkbox);
+                li.appendChild(label);
+
+                // Create input fields for start and end times
+                const startTimeInput = document.createElement('input');
+                startTimeInput.type = 'time';
+                startTimeInput.placeholder = 'Start Time';
+                startTimeInput.style.marginRight = '10px';
+
+                const endTimeInput = document.createElement('input');
+                endTimeInput.type = 'time';
+                endTimeInput.placeholder = 'End Time';
+
+                // Append input fields to task item
+                li.appendChild(startTimeInput);
+                li.appendChild(endTimeInput);
+
+                // Check if buttons already exist for this task
+                if (!li.dataset.buttonsAppended) {
+                    // Create delete button with trash bin icon
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.classList.add('delete-btn');
+                    deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                    deleteBtn.addEventListener('click', function() {
+                        li.remove();
+                        saveTasks();
+                    });
+
+                    // Create edit button with edit icon
+                    const editBtn = document.createElement('button');
+                    editBtn.classList.add('edit-btn');
+                    editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+                    editBtn.addEventListener('click', function() {
+                        const newText = prompt('Edit task:', taskText);
+                        if (newText !== null && newText.trim() !== '') {
+                            label.textContent = newText;
+                            saveTasks();
+                        }
+                    });
+
+                    // Append buttons to task item
+                    li.appendChild(deleteBtn);
+                    li.appendChild(editBtn);
+
+                    // Mark buttons as appended
+                    li.dataset.buttonsAppended = true;
+                }
+
+                taskList.appendChild(li);
+            }
+
+            function saveTasks() {
+                const tasks = Array.from(taskList.children).map(li => {
+                    const taskText = li.querySelector('label').textContent;
+                    const startTime = li.querySelector('input[type="time"][placeholder="Start Time"]').value;
+                    const endTime = li.querySelector('input[type="time"][placeholder="End Time"]').value;
+                    return { taskText, startTime, endTime };
+                });
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+
+            function loadTasks() {
+                const tasks = JSON.parse(localStorage.getItem('tasks'));
+                if (tasks) {
+                    tasks.forEach(task => addTaskWithTime(task.taskText, task.startTime, task.endTime));
+                }
+            }
+
+            function addTaskWithTime(taskText, startTime, endTime) {
+                const li = document.createElement('li');
+
+                // Create checkbox input
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+
+                // Create label for the checkbox
+                const label = document.createElement('label');
+                label.textContent = taskText;
+
+                // Append checkbox and label to task item
+                li.appendChild(checkbox);
+                li.appendChild(label);
+
+                // Create input fields for start and end times
+                const startTimeInput = document.createElement('input');
+                startTimeInput.type = 'time';
+                startTimeInput.value = startTime;
+                startTimeInput.placeholder = 'Start Time';
+                startTimeInput.style.marginRight = '10px';
+
+                const endTimeInput = document.createElement('input');
+                endTimeInput.type = 'time';
+                endTimeInput.value = endTime;
+                endTimeInput.placeholder = 'End Time';
+
+                // Append input fields to task item
+                li.appendChild(startTimeInput);
+                li.appendChild(endTimeInput);
+
+                // Check if buttons already exist for this task
+                if (!li.dataset.buttonsAppended) {
+                    // Create delete button with trash bin icon
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.classList.add('delete-btn');
+                    deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                    deleteBtn.addEventListener('click', function() {
+                        li.remove();
+                        saveTasks();
+                    });
+
+                    // Create edit button with edit icon
+                    const editBtn = document.createElement('button');
+                    editBtn.classList.add('edit-btn');
+                    editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+                    editBtn.addEventListener('click', function() {
+                        const newText = prompt('Edit task:', taskText);
+                        if (newText !== null && newText.trim() !== '') {
+                            label.textContent = newText;
+                            saveTasks();
+                        }
+                    });
+
+                    // Append buttons to task item
+                    li.appendChild(deleteBtn);
+                    li.appendChild(editBtn);
+
+                    // Mark buttons as appended
+                    li.dataset.buttonsAppended = true;
+                }
+
+                taskList.appendChild(li);
+            }
+
+            function addDateToTasks() {
+                const today = new Date().toLocaleDateString();
+                const lis = taskList.children;
+                for (let li of lis) {
+                    if (!li.dataset.dateAppended) {
+                        const dateSpan = document.createElement('span');
+                        dateSpan.textContent = today;
+                        li.appendChild(dateSpan);
+                        li.dataset.dateAppended = true;
+                    }
+                }
+            }
+
+            function redirectToMeeting() {
+                window.location.href = 'https://meet.google.com/';
+            }
+
+            function redirectToChat() {
+                window.location.href = 'https://discord.gg/pKJNTaAmYz';
+            }
+
+            // Export to Excel
+            document.getElementById('export-to-excel-btn').addEventListener('click', function() {
+                const tasks = Array.from(document.getElementById('task-list').children).map(li => {
+                    const taskText = li.querySelector('label').textContent;
+                    const startTime = li.querySelector('input[type="time"][placeholder="Start Time"]').value;
+                    const endTime = li.querySelector('input[type="time"][placeholder="End Time"]').value;
+                    return { taskText, startTime, endTime };
+                });
+
+                const worksheet = XLSX.utils.json_to_sheet(tasks);
+                const workbook = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(workbook, worksheet, 'Tasks');
+                XLSX.writeFile(workbook, 'tasks.xlsx');
+            });
+        });
+    </script>
+</body>
+</html>

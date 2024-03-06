@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer</title>
+    <style>      
+        h1{
+            text-align: center;
+            color: #ffffff;
+            background-color: #132E35;
+            margin: 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-color: aliceblue;
+            border-style: solid;
+            border-width: 2px;
+            margin-top: 7px;
+            margin-left: 7px;
+            margin-right: 7px;
+            transition: box-shadow 0.3s ease;   
+        }  
+        h1:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.492); /* Add drop shadow on hover */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #091e24;
+        }
+        .footer {
+            background-color: black;
+            color: antiquewhite;
+            text-align: center;
+            margin-bottom: 7px;
+            position: sticky;
+            bottom: 0;
+            width: 99%;
+            border-radius: 10px;
+            margin-left: 7px;
+            display: flex;
+            border-color: aliceblue;
+            border-style: solid;
+            border-width: 2px;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .footer:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.492); /* Add drop shadow on hover */
+        }
+        .footer p{
+            background-color: #000000;
+        }
+        p {
+            background-color: #132E35;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex: 1;
+        }
+        .para{
+            text-align: center;
+            color: #ffffff;
+            background-color: #091e24;
+            margin: 0;
+            padding: 20px;
+            margin-top: 250px;  
+            font-style: italic;
+            font-size: 20px;
+        }
+        .P{
+            margin-top: 350px;
+            color: aliceblue;
+            background-color: #091e24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey, this is the page demonstrating<br>Sticky Footer</h1>
+    <p class="para">Just hover once on the footer to see something!</p>
+    <p class="P">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit deleniti in quis id minus. Earum delectus assumenda corrupti. Eius, earum vel quos beatae praesentium magnam mollitia exercitationem numquam veniam sapiente.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestiae porro accusamus reiciendis, commodi architecto necessitatibus suscipit similique cumque tempora. Beatae blanditiis id sed? Nemo explicabo ab praesentium aspernatur natus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquam, nisi aut adipisci blanditiis, quia vitae nostrum itaque necessitatibus cum maxime voluptatum? Porro voluptates quod tenetur nostrum vero illo accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur porro illum officiis sed cum velit suscipit quod veritatis ratione iure nesciunt, nulla vero laudantium consequatur esse et aut? Similique, quod?
+    </p>
+    <footer class="footer">
+        <p>Hey! I am the Footer</p>
+    </footer>
+</body>
+</html>

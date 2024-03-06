@@ -1,0 +1,169 @@
+*{
+    background-color: black;
+    /*background-image: url(download.jpeg);*/
+}
+
+.p{
+    background-color: #000000;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.profiles{
+    
+    height: 100px;
+    background-color: #30b7f0;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 1350px;
+    border-radius: 10px;
+    border: 2px solid #0ca2c8;
+    box-shadow: #00e1ff 0px 0px 10px 0px;
+}
+
+.p1{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p2{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p3{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p4{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p5{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+
+.profile{
+    height: 500px;
+    width: 410px;
+    background-color: #30b7f0;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 130px;
+    margin-left: 50px;
+    float: left;
+    box-shadow: #00e1ff 0px 0px 10px 0px;  
+    border: 1px solid #00e1ff; 
+    display: flexbox; 
+}
+
+.pic{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #000000;
+    background-image: url(doctor.jpg);
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 40px 0px #bb61c98f;
+    float: left;
+    margin-left: 100px;
+    margin-top:-530px;
+
+}
+
+.chat{
+    height: 500px;
+    width: 900px;
+    background-color: #00e1ff;
+    border-radius: 5px;
+    border: 1px solid #00e1ff;
+    margin-top: 0px;
+    margin-left: 450px;
+    margin-right: 50px;
+    float: left;
+    display: flex;
+    box-shadow: #00e1ff 0px 0px 10px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+.micbar{
+    width: 840px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.82);
+    border-radius: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(0, 0, 0, 0.93);
+}
+
+.mic_circ{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    float: left;
+    margin-left: 0px;
+    margin-top: -15px;
+}
+
+.chatbox{
+    width: 840px;
+    height: 400px;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-top: 15px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

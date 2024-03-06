@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Animation</title>
+    <style>
+    *{
+        background-color: #2D142C;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes zoomOut {
+            from {
+                transform: scale(1.2);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .zoom {
+            width: 30rem;
+            height: 30rem;
+            background-color: lightblue;
+            display: inline-block;
+            transition: transform 0.5s ease;
+            margin-left: 15rem;
+            margin-top: 10rem;
+        }
+
+        .zoom:hover {
+            animation: zoomIn 2s forwards;
+        }
+
+        .zoom:active {
+            animation: zoomOut 2s forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="zoom"></div>
+    <div class="clrchng"></div>
+
+</body>
+</html>

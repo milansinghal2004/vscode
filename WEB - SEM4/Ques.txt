@@ -1,0 +1,39 @@
+Q1. Design a webpage to describe your university. The webpage should have properly aligned paragraphs to show textual information and images wherever required.
+
+Q2. Create your own timetable using HTML & CSS which should display classes.
+
+Q3. Create a webpage that should have a menu to show different tourist places in dehradun and use different background and foreground colors along with more such properties.
+
+Q4. HTML forms using different form elements
+    1. Create a login page using different form elements
+    2. Create a HTML form for a student for course registeration which should have following fields
+        Student Name (textbox)
+        Age (textbox with numbers only)
+        DOB (Calender)
+        Course (Dropdown)
+        Submit (Button)
+    3. Form for selecting sports in your university, form should have fields like name, password, address, select game, gender, Age.
+
+Q5. Use of inline internal and external style sheets, and incorporating styles in html document -
+    1. Use inline style sheets and Create a webpage
+    2. Create a css based sticky footer.
+    3. Using HTML and CSS Create a custom hover and focus effect for navigation items using CSS transformations.
+    4. Using HTML and CSS Create a zoom in and out effect / animation.
+
+Q6. Responsive design with Media Queries -
+    1. Add a CSS Media Query and appropriate styles so that the web page looks similar even when resized to smaller widths.
+        the sidebar should be hidden.
+        body should have no padding.
+        images should not exceed width of window.
+        navigation items should be on their own line.
+        header should be fixes so that it is placed at the top after scrolling.
+
+Q7. Client Side Programing using Java Script, use of control statements
+    1. Write a JS Programme that displays the largest integer among 3 integers.
+    2. Write a JS Function that accepts a string as a parameter & convert first letter of each word to upper case.
+    3. Write a JS to create a simple calculator.
+    4. Write a JS Program to find longest word of a string entered by the user.
+    5. Write a JS Program to find odd numbers and sum from 1 to 100.
+    6. Write a JS Program to generate a random string.
+    7. Write a JS Program to print prime numbers and their sum in a given interval.
+    8. Write a JS Program to populate a Dropdown box from 1 to 100.

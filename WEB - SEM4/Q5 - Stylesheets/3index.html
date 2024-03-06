@@ -1,0 +1,50 @@
+<!-- Using HTML and CSS Create a custom hover and focus effect for navigation items using CSS transformations. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover & Focus Effect</title>
+    <style>
+        *{
+            background-color: #021024;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            color: #C1E8FF;
+        }
+        li {
+            margin: 0 10px;
+            color: #C1E8FF;
+        }
+        a {
+            text-decoration: none;
+            color: #C1E8FF;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.5s;
+            font-size: large;
+            margin-left: 25%;
+            width: 20rem;
+        }
+        a:hover {
+            transform: scale(1.37);
+            text-shadow: #9cdbff 0px 0px 7px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Univ. Page</a></li>
+            <li><a href="#">My TimeTable</a></li>
+            <li><a href="#">Forms</a></li>
+            <li><a href="#">StyleSheets</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

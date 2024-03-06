@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Dropdown</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #AAC7D8;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    select {
+      background: none;
+      border: 2px solid #293532;
+      border-radius: 20px;
+      box-sizing: border-box;
+      font-size: larger;
+      height: 50px;
+    }
+
+    button {
+      font-family: 'Protest Riot', sans-serif;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      appearance: none;
+      background-color: #293532;
+      border: 0;
+      border-radius: 36px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #293532;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Number Dropdown</h1>
+  <label for="drpdwn" style="font-size: 20px;">Select a number:</label>
+  <select id="drpdwn">
+    
+  </select>
+  <br>
+  <button onclick="displaynum()">Show Selected Number</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  const drpdwn = document.getElementById('drpdwn');
+  for (let i = 1; i <= 100; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.text = i;
+    drpdwn.add(option);
+  }
+
+  function displaynum() {
+    const num = document.getElementById('drpdwn').value;
+    document.getElementById('result').innerText = `Selected Number: ${num}`;
+  }
+</script>
+
+</body>
+</html>

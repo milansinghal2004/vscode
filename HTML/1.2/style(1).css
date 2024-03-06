@@ -1,0 +1,109 @@
+*{
+    background-color: black;
+}
+
+.profiles{
+    
+    height: 100px;
+    background-color: #30b7f0;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 1350px;
+    border-radius: 10px;
+    border: 2px solid #e8f900;
+}
+
+.p1{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p2{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p3{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p4{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+.p5{
+    height: 80px;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 10px;
+    margin-left: 23px;
+    float: left;
+}
+
+.profile{
+    height: 550px;
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-top: 200px;
+    margin-left: 50px;
+    float: left;
+    
+}
+
+.chat{
+    height: 550px;
+    width: 850px;
+    background-color: #00e1ff;
+    border-radius: 5px;
+    border: 2px solid #e7f705;
+    margin-top: 0px;
+    margin-left: 500px;
+    float: left;
+    display: flex;
+}
+
+.micbar{
+    width: 650px;
+    height: 50px;
+    border-radius: 25px;
+    margin-left: 100px;
+    margin-top: 480px;
+}
+
+.mic_circ{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    float: left;
+    margin-left: 290px;
+    margin-top: -15px;
+}
