@@ -1,0 +1,114 @@
+:root {
+  --bgcolor: #370f62;
+  --txtw: #9f1d71;
+  --txtw2: #faf7f7;
+  --txtb: black;
+  --pagebg: #fbeaea;
+}
+
+body{
+    padding: 0%;
+    margin: 0%;
+    background-color: var(--pagebg);
+}
+  header {
+    display: flex;
+    width: 100%;
+    height: 8.3333vh;
+    background-color: var(--bgcolor);
+  }
+  header .MyProfile {
+    padding-top: 1%;
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--txtw);
+    display: inline;
+    margin-right: 15%;
+    padding-left: 4.3333%;
+    text-decoration: none;
+    color: var(--pagebg);
+  }
+  header .about {
+    display: inline;
+    padding-top: 1%;
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--txtw);
+    padding-left: 78%;
+    text-align: end;
+    text-decoration: none;
+    right: 0%;
+    color: var(--pagebg);
+  }
+  .options {
+    display: inline-block;
+    width: 100%;
+    height: 40vh;
+    /* background-color: brown; */
+    margin-top: 12%;
+    size: 100vh;
+  }
+  .submit-btn {
+    width: 25%; /* Set a fixed width */
+    height: 30vh;
+    padding: 5%; /* Adjusted padding */
+    border-radius: 24px;
+    font-size: 2em; /* Adjusted font size */
+    display: inline-block; /* Changed display to inline-block */
+    text-align: center; /* Center text horizontally */
+    position: relative;
+    /* display: inline-block;
+      width: 25%;
+      height: 30vh;
+      padding: 10%;
+      border-radius: 24px;
+      font-size: 8em;
+      justify-content: center;
+      align-items: center;
+      text-align: center; */
+  }
+  .b1 {
+    margin-left: 21%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .b2 {
+    margin-left: 8%;
+  }
+  .i2 {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .b2 strong pre, .b1 strong pre{
+      text-color: var(--txtw2);
+      text-decoration: none;
+  }
+
+  .b1:hover::before {
+    content: "Audio Input";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: var(--txtb);
+    margin-top: 1.4em;
+  }
+
+  .b2:hover::before {
+    content: "Text Input";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: var(--txtb);
+    margin-top: 1.4em;
+  }
+  
+  
