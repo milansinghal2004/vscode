@@ -42,4 +42,7 @@ Q8. JS Event Handling and Functions
     1. Write a JS Program to generate a random number and display it in a textbox.
     2. Write a JS Function that changes background color of an element on a particular event. (ontouch, hover, onclick etc.)
     3. Write a JS to validate course registeration form. (Try using Angular JS)
-    4. 
+    4. Write a JS Program that adds key down event listner to a text input to detect when the enter key is pressed.
+    5. Write a JS Program to show the use of alert, prompt & confirm dialogue boxes.
+    6. Write a JS Function to extract specified number of characters from a string.
+    7. Write a JS Function to accept DOB for a user and calculate the difference till current date.
