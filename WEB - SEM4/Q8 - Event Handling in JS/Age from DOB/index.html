@@ -1,0 +1,94 @@
+<!-- Write a JS Function to accept DOB for a user and calculate the difference till current date. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Age</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #AAC7D8;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      margin: 10px;
+      font-family: 'Protest Riot', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      appearance: none;
+      background-color: #293532;
+      border: 0;
+      border-radius: 36px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    input {
+      background: none;
+      border: 2px solid #293532;
+      border-radius: 36px;
+      box-sizing: border-box;
+      font-size: larger;
+      text-align: center; /* Center the text in the input boxes */
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Calculate Age</h1>
+  <label for="dob">Enter your date of birth:</label>
+  <input type="date" id="dob" required><br>
+
+  <button onclick="calculateAge()">Calculate Age</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+  function calculateAge() {
+    var dobInput = document.getElementById('dob').value;
+    var dob = new Date(dobInput);
+    var currentDate = new Date();
+
+    var age = currentDate - dob;
+    var ageInYears = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+    
+    var remaing = age % (1000 * 60 * 60 * 24 * 365.25);
+    var ageInMonths = Math.floor(remaing / (1000 * 60 * 60 * 24 * 30.45));
+
+    remaing = remaing % (1000 * 60 * 60 * 24 * 30.45);
+    var ageInDays = Math.floor(remaing / (1000 * 60 * 60 * 24));
+
+    var result = "Your age is: " + ageInYears + " years, " + ageInMonths + " months, and " + ageInDays + " days.";
+    document.getElementById('result').textContent = result;
+  }
+</script>
+
+</body>
+</html>

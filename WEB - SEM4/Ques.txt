@@ -46,3 +46,8 @@ Q8. JS Event Handling and Functions
     5. Write a JS Program to show the use of alert, prompt & confirm dialogue boxes.
     6. Write a JS Function to extract specified number of characters from a string.
     7. Write a JS Function to accept DOB for a user and calculate the difference till current date.
+
+Q9. Using Angular JS -> implement input validation
+    1. Write a Code to change BG of textbox based on the color mention by the user in the same textbox.
+    2. Write a Code to create a cost calculator.
+    3. Write a Code to to build a simple search filtr Functionality to diaplay a filtered list based on Search Query entered by user.
