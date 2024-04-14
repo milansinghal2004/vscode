@@ -51,3 +51,7 @@ Q9. Using Angular JS -> implement input validation
     1. Write a Code to change BG of textbox based on the color mention by the user in the same textbox.
     2. Write a Code to create a cost calculator.
     3. Write a Code to to build a simple search filtr Functionality to diaplay a filtered list based on Search Query entered by user.
+    4. Use angular JS Tables to perform the following:
+        a - Display table
+        b - display table content with order by filter
+        c - Display table with even and odd entries

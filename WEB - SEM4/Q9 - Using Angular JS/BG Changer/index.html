@@ -1,0 +1,46 @@
+<!-- Write a Code to change BG of textbox based on the color mention by the user in the same textbox. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Textbox Background Color</title>
+<style>
+    #colorTextbox {
+        width: 300px;
+        height: 30px;
+        font-size: 16px;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 50px;
+    }
+    body {
+        font-family: 'roboto';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #AAC7D8;
+    }
+</style>
+</head>
+<body>
+    <label for="colorTextbox"><pre style="font-size: x-large; font-weight: bold;">Type a hexadecimal code:    </pre></label><br>
+    <input type="text" id="colorTextbox" placeholder="#AAC7D8" onkeyup="changeTextboxColor()"><br>
+
+    <script>
+        function changeTextboxColor() {
+            var colorTextbox = document.getElementById("colorTextbox");
+            var colorValue = colorTextbox.value;
+
+            // Check if the entered value is a valid color
+            if (/^#[0-9A-F]{6}$/i.test(colorValue) || /^(?:rgb\(|rgba\()/.test(colorValue) || /^(?:hsl\(|hsla\()/.test(colorValue) || /^(black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua)$/i.test(colorValue)) {
+                colorTextbox.style.backgroundColor = colorValue;
+            } else {
+                colorTextbox.style.backgroundColor = '';
+            }
+        }
+    </script>
+</body>
+</html>

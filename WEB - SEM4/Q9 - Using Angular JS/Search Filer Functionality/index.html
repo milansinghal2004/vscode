@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Search Filter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #AAC7D8;
+    }
+    .search-container {
+        width: 350px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .search-input {
+        width: calc(100% - 50px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .search-button {
+        width: 67px;
+        padding: 8px;
+        margin-left: 10px;
+        background-color: #293532;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+    }
+    .search-button:hover {
+        background-color: #293532;
+    }
+    .result-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .result-item {
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+</style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search..." onkeyup="filterList()">
+        <button id="searchButton" class="search-button" onclick="filterList()">Search</button>
+        <ul id="resultList" class="result-list">            
+            <li class="result-item">Artificial Intelligence & Machine Learning</li>
+            <li class="result-item">Big Data</li>
+            <li class="result-item">Cloud Computing</li>
+            <li class="result-item">Cyber Security & Forensics</li>
+            <li class="result-item">Data Science</li>
+            <li class="result-item">Full Stack Development</li>
+            <li class="result-item">Graphics & Gaming</li>
+        </ul>
+    </div>
+
+    <script>
+        function filterList() {
+            var input, filter, ul, li, item, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("resultList");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                item = li[i];
+                txtValue = item.textContent || item.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

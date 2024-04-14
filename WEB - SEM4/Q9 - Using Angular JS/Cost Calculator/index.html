@@ -1,0 +1,99 @@
+<!-- Write a Code to create a cost calculator. -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="costCalculatorApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #AAC7D8;
+    }
+    .calculator {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .calculator input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    .calculator .input-field {
+        padding: 8px;
+    }
+    .calculator input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #293532;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+    }
+    .calculator input[type="button"]:hover {
+        background-color: #293532;
+    }
+    #totalCost {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .calculator.ng-scope{
+        padding: 20px;
+    }
+
+    #quantity{
+        width: 200px;
+        margin-right: 0px;
+    }
+
+    #price{
+        width: 162px;
+    }
+</style>
+</head>
+<body>
+    <div ng-controller="CostCalculatorController" class="calculator">
+        <h2>Cost Calculator</h2>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" ng-model="quantity" min="0.25" value="1" class="input-field" ng-keypress="handleKeyPress($event)">
+        <label for="price">Price per Unit:</label>
+        <input type="number" id="price" ng-model="price" min="0.00" step="1" value="1.00" class="input-field" ng-keypress="handleKeyPress($event)">
+        <input type="button" value="Calculate" ng-click="calculateTotal()">
+        <div id="totalCost">{{ totalCost | currency:"₹" }}</div>
+    </div>
+
+    <script>
+        angular.module('costCalculatorApp', [])
+        .controller('CostCalculatorController', function($scope) {
+            $scope.quantity = 1;
+            $scope.price = 1.00;
+            $scope.totalCost = 0.00;
+
+            $scope.calculateTotal = function() {
+                $scope.totalCost = $scope.quantity * $scope.price;
+            };
+
+            $scope.handleKeyPress = function(event) {
+                if (event.which === 13) { // 13 is the Enter key code
+                    $scope.calculateTotal();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
