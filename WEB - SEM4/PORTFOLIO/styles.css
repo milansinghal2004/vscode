@@ -483,3 +483,50 @@ body.light-mode nav ul li a:hover {
 a{
     text-decoration: none;
 }
+
+/* Download button styles similar to project cards */
+.download-button {
+    text-align: center;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.download-button h3 {
+    margin-top: 2vh;
+    font-size: 1.5em;
+    color: #0088ff;
+}
+
+.download-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Download button styles similar to project cards */
+.download-button {
+    text-align: center;
+    display: block;
+    width: 300px;
+    margin: 10px auto;
+    text-decoration: none;
+}
+
+.download-button h3 {
+    margin-top: 2vh;
+    font-size: 1.5em;
+    color: #0088ff;
+}
+
+.download-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card container styles for the portfolio section */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
