@@ -2,10 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('bg.jpeg');
-    background-size: cover;
-    /* background-color: black; Change background to black */
-    color: #121212; /* Set font color to white */
+    background-color: black; /* Change background to black */
+    color: white; /* Set font color to white */
 }
 
 .container {
@@ -56,17 +54,22 @@ header input {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
-    color: #121212; /* Set artist circle text color to white */
+    color: rgb(0, 0, 0); /* Set artist circle text color to white */
     position: relative;
     z-index: 2;
 }
 
 .artist-circle:hover {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(145, 145, 145);
 }
 
 .artist-circle.selected {
     border: 2px solid black; /* Add black border to the selected artist circle */
+}
+
+.content {
+    display: flex;
+    gap: 20px;
 }
 
 .music-list {
@@ -75,10 +78,11 @@ header input {
     gap: 10px;
     position: relative;
     z-index: 3; /* Ensure music list appears in front */
+    flex: 1;
 }
 
 .music-item {
-    width: calc(50% - 10px);
+    width: calc(100% - 10px); /* Adjusted to take full width within the column */
     background: rgba(255, 255, 255, 0.2); /* Translucent background for glassmorphism effect */
     padding: 10px;
     cursor: pointer;
@@ -92,12 +96,17 @@ header input {
     background: rgba(255, 255, 255, 0.3); /* Slightly more opaque background on hover */
 }
 
+#player {
+    flex: 0 0 300px; /* Fixed width for the player */
+    margin-top: 20px;
+    z-index: 4; /* Ensure player appears in front */
+    background: rgba(255, 255, 255, 0.2); /* Translucent background for glassmorphism effect */
+    padding: 10px;
+    border-radius: 5px; /* Optional: To give the player container rounded corners */
+    height: 80px; /* Set height for the player container */
+}
+
 footer {
     margin-top: 20px;
     text-align: center;
-}
-
-#player {
-    margin-top: 20px;
-    z-index: 4; /* Ensure player appears in front */
 }
