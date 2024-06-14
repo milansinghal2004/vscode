@@ -2,7 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: url('bg.jpeg');
+    background-size: cover;
+    /* background-color: black; Change background to black */
+    color: #121212; /* Set font color to white */
 }
 
 .container {
@@ -10,8 +13,13 @@ body {
     margin: auto;
     margin-top: 5vh;
     padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2); /* Increase transparency for stronger glassmorphism effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px); /* Increase blur for stronger glassmorphism effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px; /* Optional: To give the container rounded corners */
+    position: relative;
 }
 
 header {
@@ -21,6 +29,7 @@ header {
 
 header h1 {
     margin: 0;
+    color: white; /* Ensure the header text is white */
 }
 
 header input {
@@ -28,6 +37,7 @@ header input {
     padding: 10px;
     margin-top: 10px;
     box-sizing: border-box;
+    color: black; /* Keep input text color readable */
 }
 
 .artists {
@@ -39,35 +49,47 @@ header input {
 .artist-circle {
     width: 50px;
     height: 50px;
-    background-color: rgb(0, 0, 0); /* Updated line to make the circles red */
+    background-color: rgb(255, 255, 255);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
+    color: #121212; /* Set artist circle text color to white */
+    position: relative;
+    z-index: 2;
 }
 
 .artist-circle:hover {
-    background-color: darkred;
+    background-color: rgb(212, 212, 212);
+}
+
+.artist-circle.selected {
+    border: 2px solid black; /* Add black border to the selected artist circle */
 }
 
 .music-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    position: relative;
+    z-index: 3; /* Ensure music list appears in front */
 }
 
 .music-item {
     width: calc(50% - 10px);
-    background: #e0e0e0;
+    background: rgba(255, 255, 255, 0.2); /* Translucent background for glassmorphism effect */
     padding: 10px;
     cursor: pointer;
     text-align: center;
+    border-radius: 5px; /* Optional: To give the music items rounded corners */
+    color: black; /* Set music item text color to black for readability */
+    z-index: 3;
 }
 
 .music-item:hover {
-    background: #d0d0d0;
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque background on hover */
 }
 
 footer {
@@ -76,5 +98,6 @@ footer {
 }
 
 #player {
-    margin-top: 20px; /* Add margin on top of the player */
+    margin-top: 20px;
+    z-index: 4; /* Ensure player appears in front */
 }
