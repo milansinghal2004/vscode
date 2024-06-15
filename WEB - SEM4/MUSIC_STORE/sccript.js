@@ -3,7 +3,7 @@ const artists = [
     { name: 'Arijit Singh', id: 2 },
     { name: 'Jubin Nautiyal', id: 3 },
     { name: 'Pritam', id: 4 },
-    { name: 'KK', id: 5 },
+    { name: 'KK', id: 5 }, 
 ];
 
 const musicList = [
