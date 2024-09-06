@@ -7,7 +7,7 @@
 html {
     scroll-behavior: smooth;
 }
-
+ 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -125,7 +125,6 @@ section h2 {
 }
 
 section h2::after {
-    content: '';
     display: block;
     width: 60px;
     height: 2px;

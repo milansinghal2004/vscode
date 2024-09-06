@@ -1,0 +1,111 @@
+/* Basic reset and styling for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to start of flex container */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Styling for the container that holds everything */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin-top: 80px; /* Increased top margin */
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+    display: none;
+}
+
+/* Basic styling for buttons */
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background: #0056b3;
+}
+
+/* Styling for input fields */
+input {
+    padding: 10px;
+    margin-top: 20px;
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Styling for questions */
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+/* Additional styling for the welcome message and score */
+h2 {
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#score-container {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input {
+        width: calc(100% - 20px);
+    }
+}
