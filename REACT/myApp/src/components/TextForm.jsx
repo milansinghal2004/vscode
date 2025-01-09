@@ -7,24 +7,28 @@ export default function TextForm(props) {
         console.log("Uppercase was Clicked" + text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to Upper Case!", "success");
     }
 
     const handleDownClick = () => {
         console.log("Downcase was Clicked" + text);
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to Lower Case!", "success");
     }
 
     const handleClrClick = () => {
         console.log("Clear was Clicked" + text);
         let newText = "";
         setText(newText);
+        props.showAlert("Message Box Cleared!", "success");
     }
 
     const handleDuplicateClick = () => {
         console.log("Duplicate was Clicked" + text);
         let newText = text + text;
         setText(newText);
+        props.showAlert("Text Duplicated!", "success");
     }
 
     const handleOnChange = (event) => {
