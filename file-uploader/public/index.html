@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload with Thumbnails</title>
+  <style>
+    #dropArea {
+      width: 100%;
+      height: 200px;
+      border: 2px dashed #ccc;
+      border-radius: 5px;
+      text-align: center;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      margin: 20px 0;
+    }
+
+    #dropArea.highlight {
+      border-color: #666;
+      background-color: #f0f0f0;
+    }
+
+    #progressContainer {
+      width: 100%;
+      height: 20px;
+      background: #e0e0e0;
+      margin-top: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0;
+      background: #76c7c0;
+    }
+
+    #speedInfo {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    #thumbnailContainer {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .thumbnail {
+      margin: 10px;
+      border: 1px solid #ccc;
+      width: 150px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="dropArea">Drag and drop your files here</div>
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+  <div id="speedInfo"></div>
+  <div id="thumbnailContainer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+  <script>
+    const dropArea = document.getElementById('dropArea');
+    const progressBar = document.getElementById('progressBar');
+    const speedInfo = document.getElementById('speedInfo');
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+
+    dropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropArea.classList.add('highlight');
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.classList.remove('highlight');
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.classList.remove('highlight');
+      const files = e.dataTransfer.files;
+      if (files.length) {
+        Array.from(files).forEach(uploadFile);
+      }
+    });
+
+    function uploadFile(file) {
+      const url = '/upload'; // Replace with your server endpoint
+      const xhr = new XMLHttpRequest();
+      const formData = new FormData();
+
+      formData.append('file', file);
+
+      xhr.open('POST', url, true);
+
+      xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+          const percentComplete = (e.loaded / e.total) * 100;
+          progressBar.style.width = percentComplete + '%';
+
+          const speed = (e.loaded / (e.timeStamp / 1000)) / 1024;
+          speedInfo.textContent = `Upload Speed: ${speed.toFixed(2)} KB/s`;
+        }
+      });
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          speedInfo.textContent = 'Upload Complete!';
+          const response = JSON.parse(xhr.responseText);
+          generateThumbnail(response.filePath, file.type); // Generate thumbnail
+        } else {
+          speedInfo.textContent = 'Upload failed!';
+        }
+      };
+
+      xhr.send(formData);
+    }
+
+    function generateThumbnail(filePath, fileType) {
+      if (fileType === 'application/pdf') {
+        const loadingTask = pdfjsLib.getDocument(filePath);
+        loadingTask.promise.then(pdf => {
+          pdf.getPage(1).then(page => {
+            const scale = 0.5;
+            const viewport = page.getViewport({ scale: scale });
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+
+            page.render(renderContext).promise.then(() => {
+              const img = document.createElement('img');
+              img.src = canvas.toDataURL();
+              displayThumbnail(img);
+            });
+          });
+        });
+      } else if (fileType.startsWith('image/')) {
+        const img = document.createElement('img');
+        img.src = filePath; // Assuming the server returns the correct path for images
+        displayThumbnail(img);
+      }
+    }
+
+    function displayThumbnail(img) {
+      const thumbnail = document.createElement('div');
+      thumbnail.classList.add('thumbnail');
+      thumbnail.appendChild(img);
+      thumbnailContainer.appendChild(thumbnail);
+    }
+  </script>
+
+</body>
+</html>
